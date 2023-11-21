@@ -1,29 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { IoFastFoodOutline } from "react-icons/io5";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <IoFastFoodOutline size={70} />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+import ReactDOM from "react-dom/client";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className="app">
       <Header />
+      <Body />
     </div>
   );
 };
