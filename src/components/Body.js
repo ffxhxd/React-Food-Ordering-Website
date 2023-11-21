@@ -1,22 +1,27 @@
 import RestaurantCard from "./ResturantCard";
 import { resObj } from "../utils/mockData";
+import { useState } from "react";
 
 const Body = () => {
+  const [listOfResturants, setListOfResturants] = useState(resObj);
+
   return (
     <div className="body-container">
-      <div className="search-bar">Search</div>
+      <div className="search-bar">
+        <button
+          onClick={() => {
+            setListOfResturants(
+              listOfResturants.filter((res) => res.info.avgRating > 3.5)
+            );
+          }}
+          className="filter-btn"
+        >
+          Fiter Top Rated Restaurants
+        </button>
+      </div>
       <div className="res-container">
-        {/* <RestaurantCard
-            //we can pass resturant data object drectly
-            //resObj is a java script object //array of objects
-            //this resdata key will go up as prop
-            resData={resObj[10]}
-          /> */}
-
-        {/* //looping over array and create card for each element */}
-
-        {resObj.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        {listOfResturants.map((curr) => (
+          <RestaurantCard key={curr.info.id} resData={curr} />
         ))}
       </div>
     </div>
