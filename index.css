@@ -1,0 +1,36 @@
+*{
+    font-family: "inter", sans-serif;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border: 1px solid #000;
+    background-color: #eee2be;
+}
+
+.logo-container{
+    
+}
+
+.logo{
+    width: 120px;
+}
+
+.logo-image{
+
+}
+
+.nav-items >ul >li{
+    padding: 22px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.nav-items >ul{
+    list-style: none;
+    display: flex;
+  
+}
