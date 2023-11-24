@@ -1,0 +1,91 @@
+@import "../../app.scss";   
+
+.restaurant-menu{
+background-color: #c9c9c9;
+display:flex    ;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width:60%;
+line-height: 2;
+margin-top: 5rem;
+margin-bottom: 5rem;
+border-radius: 12px;
+
+@include mobile{
+    width: 95%;
+}
+
+@include tablet{
+    width: 85%;
+}
+
+
+.menu-image{
+        width: 100%;
+        height: 400px;
+        border-radius: 12px 12px 0 0;
+}
+
+h1{
+        font-size: 5rem;
+        color: rgb(31, 3, 190);
+        @include mobile{
+            font-size:3rem;
+        }
+}
+
+
+hr{
+    width: 80%;
+    border: 0 0 4px 0;
+    border-radius: 12px;
+    border: 4px solid rgb(95, 102, 231);
+}
+
+h2{
+    font-size: 3rem;
+    @include mobile{
+        font-size:1.3rem;
+    }
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 2rem;
+    @include mobile{
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+li{
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: rgb(153, 142, 215);
+    padding: 1rem;
+    border-radius: 12px;
+    @include mobile{
+        font-size:1rem;
+    }
+}
+
+span{
+    font-weight: 900;
+    font-size: 1.5rem;
+    @include mobile{
+        font-size:1.2rem;
+    }
+}
+
+
+
+
+}

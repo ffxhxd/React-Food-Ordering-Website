@@ -1,0 +1,130 @@
+@import "../../app.scss";
+
+
+.body-container{
+    
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin:10rem 0rem;
+    
+    .btns-container{
+      
+       display: flex;
+       width: 320px;
+       flex-direction: column;
+       align-items: flex-start;
+       justify-content:center;
+       
+       gap: 2rem;
+       
+
+       .twobtns{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        @include mobile{
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+        button{
+            width: 300px;
+            margin:0 1rem;
+        }
+       
+       }
+      
+
+        .inp-btn{
+            
+            display: flex;
+
+          
+
+            input {
+                padding: 1.5rem;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                transition: border-color 0.3s ease-in-out;
+                width: 100%;
+                margin:0 1rem;
+            
+                &:focus {
+                  outline: none;
+                  border-color: #000000;
+                  box-shadow: 0 0 5px rgba(0, 24, 50, 0.5);
+                }
+              }
+    
+        }
+    
+
+        .search-button{
+            border: none;
+            background-color: transparent;
+            padding-left: 1rem;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+    
+            
+            }
+            .search-button:hover{
+                color: rgb(0, 76, 255);
+                transition: ease-in 0.3s;
+                }
+
+                .filter-top{
+                    width: 30%;
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    transition: border-color 0.3s ease-in-out;
+                    border: none;
+                    background-color: #dadada;
+                    font-size: 1.5rem;
+                    font-weight: 900;
+                    letter-spacing: 1px;
+                    margin-bottom: 3rem;
+
+                    &:hover {
+                        outline: none;
+                        border-color: #000000;
+                        box-shadow: 0 0 5px rgba(0, 24, 50, 0.5);
+                      }
+
+                      @include mobile{
+                       width: 100% ;
+                       margin-top: 1.5rem ;
+                    }
+
+
+            
+                }
+
+                
+
+        }
+
+
+    .res-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+
+        
+        @include desktop{
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @include tablet{
+            grid-template-columns: 1fr 1fr;
+        }
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
+    }
+}
