@@ -1,4 +1,6 @@
-import RestaurantCard from "../ResturantCard/ResturantCard";
+import RestaurantCard, {
+  withPromotedLabel,
+} from "../ResturantCard/ResturantCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
@@ -11,6 +13,8 @@ const Body = () => {
   const [toggle, setToggle] = useState(false);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchRestaurants();
@@ -89,7 +93,11 @@ const Body = () => {
             key={restaurant?.info.id}
             to={"/restaurants/" + restaurant?.info.id}
           >
-            <RestaurantCard resData={restaurant?.info} />
+            {restaurant.info.isOpen ? (
+              <RestaurantCardPromoted resData={restaurant?.info} />
+            ) : (
+              <RestaurantCard resData={restaurant?.info} />
+            )}
           </Link>
         ))}
       </div>

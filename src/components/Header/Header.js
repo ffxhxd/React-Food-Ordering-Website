@@ -4,9 +4,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import "./header.scss";
 import { useState } from "react";
+import useOnlineStatus from "../../utils/useOnlineStatus";
+import { FaWifi } from "react-icons/fa";
+import { MdOutlineWifiOff } from "react-icons/md";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+
+  const isOnline = useOnlineStatus();
 
   return (
     <nav className="main-nav">
@@ -16,6 +21,22 @@ const Header = () => {
 
       <div className={toggle ? "mobile" : "menu-link"}>
         <ul className="nav-ul res">
+          <li className="nav-li online">
+            Online Status :{" "}
+            {isOnline ? (
+              <FaWifi
+                size={22}
+                style={{ color: "green" }}
+                className="wifiicon"
+              />
+            ) : (
+              <MdOutlineWifiOff
+                size={22}
+                style={{ color: "red" }}
+                className="wifiicon"
+              />
+            )}
+          </li>
           <Link to="/">
             <li className="nav-li">Home</li>
           </Link>
