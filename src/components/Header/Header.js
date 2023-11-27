@@ -7,11 +7,16 @@ import { useState } from "react";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import { FaWifi } from "react-icons/fa";
 import { MdOutlineWifiOff } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   const isOnline = useOnlineStatus();
+
+  //selector : it is nothing but a hook inside react, it will give us access to the store,,,, here we are subscribing to the store using selector
+  //we are subcrinbing to small portioon of  store
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <nav className="main-nav">
@@ -47,7 +52,7 @@ const Header = () => {
             <li className="nav-li">Contact</li>
           </Link>
           <Link to="/cart">
-            <li className="nav-li">Cart</li>
+            <li className="nav-li">Cart ({cartItems.length} items)</li>
           </Link>
         </ul>
       </div>

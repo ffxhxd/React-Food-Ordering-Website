@@ -11,8 +11,8 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   };
   return (
     <div className="big">
-      <div className="accordian-container" onClick={handleClick}>
-        <div className="acc-head">
+      <div className="accordian-container">
+        <div className="acc-head" onClick={handleClick}>
           <span>
             {data.title} ({data.itemCards.length})
           </span>

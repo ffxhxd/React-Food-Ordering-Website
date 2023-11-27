@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../../utils/constants";
 import "./itemList.scss";
+import { addItem } from "../../utils/Redux/cartSlice";
 
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    //dispatch action
+    // whatever we pass in additem that is our payload (action.payload) whenever we will call this it will create an object and it will create a
+    //payload inside this object and it will add  whatever data we have added to this object and will take this object and pass as second argument in out additem function
+    dispatch(addItem(item));
+  };
+
   return (
     <div>
       {items.map((item) => (
@@ -18,7 +28,14 @@ const ItemList = ({ items }) => {
           </div>
           <div className="img-cont">
             <img src={CDN_URL + item.card.info.imageId} alt="hhhhh" />
-            <button>ADD</button>
+            <button
+              onClick={
+                //passing a callback function
+                () => handleAddItem(item)
+              }
+            >
+              ADD
+            </button>
           </div>
         </div>
       ))}

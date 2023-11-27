@@ -8,13 +8,18 @@ import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu/RestaurantMenu";
 import "./App.scss";
+import { Provider } from "react-redux";
+import appStore from "./utils/Redux/appStore";
+import Cart from "./components/CartPage/Cart";
 
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 
@@ -39,6 +44,10 @@ const appRouter = createBrowserRouter([
         //dynamic path by giving : colon (means the part after colon is dynamic)
         path: "restaurants/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <ErrorPage />,
