@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Contact from "../Contact/Contact";
+import Contact from "../components/Contact/Contact";
 import "@testing-library/jest-dom";
 
 test("should load contact component", () => {

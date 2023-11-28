@@ -1,12 +1,13 @@
 import UserContext from "../../utils/Context/UserContext";
 import { useContext } from "react";
 import { CDN_URL } from "../../utils/constants";
-import "./resturantCards.scss";
+//import "./resturantCards.scss";
 
 const RestaurantCard = (props) => {
   const data = useContext(UserContext);
 
   const { resData } = props;
+  console.log(resData);
   const { cloudinaryImageId, name, avgRating, costForTwo, sla } = resData;
 
   return (

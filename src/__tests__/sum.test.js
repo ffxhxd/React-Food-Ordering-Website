@@ -1,4 +1,4 @@
-import { sum } from "../sum";
+import { sum } from "../components/sum";
 
 //function test  takes 2 args ist a string another a call back function
 test("sum should calculate sum of two numbers", () => {

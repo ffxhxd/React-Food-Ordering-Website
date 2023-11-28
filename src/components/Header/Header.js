@@ -2,7 +2,7 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
-import "./header.scss";
+//import "./header.scss";
 import { useState } from "react";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import { FaWifi } from "react-icons/fa";
@@ -19,7 +19,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <nav className="main-nav">
+    <nav className="main-nav" role="nav-bar">
       <div className="logo">
         <IoFastFoodOutline size={50} />
       </div>
