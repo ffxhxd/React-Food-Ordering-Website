@@ -1,5 +1,5 @@
 # React-Food-Ordering-Website
-E-commerce website for handmade products only
+Food Ordering website like Swiggy.com
 
 ## Technologies Used
 
